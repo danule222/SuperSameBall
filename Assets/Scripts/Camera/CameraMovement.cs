@@ -36,7 +36,7 @@ public class CameraMovement : MonoBehaviour
     private void TiltEffect()
     {
         // Horizontal tilt
-        if (Input.GetAxis("Horizontal") != 0)
+        if (Input.GetAxis("Horizontal") != 0 && !Input.GetButton("Move camera"))
             tiltZAngle = Mathf.LerpAngle(tiltZAngle, Input.GetAxis("Horizontal") * tiltMax, Time.deltaTime * tiltSpeed);
         else
             tiltZAngle = Mathf.LerpAngle(tiltZAngle, .0f, Time.deltaTime * tiltSpeed);
@@ -44,7 +44,7 @@ public class CameraMovement : MonoBehaviour
         transform.Rotate(new Vector3(.0f, .0f, tiltZAngle));
 
         // Vertical tilt
-        if (Input.GetAxis("Vertical") != 0)
+        if (Input.GetAxis("Vertical") != 0 && !Input.GetButton("Move camera"))
             tiltY = Mathf.Lerp(tiltY, -Input.GetAxis("Vertical"), Time.deltaTime * tiltSpeed);
         else
             tiltY = Mathf.Lerp(tiltY, .0f, Time.deltaTime * tiltSpeed);
