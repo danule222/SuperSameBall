@@ -10,16 +10,23 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody rb;
     private float axis;
+    // Sprint
+    private bool isSprinting = false;
+    private float lastSprint;
+    private int sprintDuration;
+    private int sprintIntensity;
 
-    void Start()
+    private void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         if (CanMove() && !Input.GetButton("Move camera"))
             SetForce();
+        if (isSprinting)
+            HandleSprint();
     }
 
     private void SetForce()
@@ -32,8 +39,12 @@ public class PlayerMovement : MonoBehaviour
         forwardCamera.y = 0.0f;
         Vector3.Normalize(forwardCamera);
 
-        Vector3 movement = new Vector3(0.0f, 0.0f, axis);
-        rb.AddForce(mainCamera.transform.forward * axis * speed);
+        if (isSprinting)
+        {
+            rb.AddForce(mainCamera.transform.forward * (axis + (speed + sprintIntensity)));
+        }
+        else
+            rb.AddForce(mainCamera.transform.forward * axis * speed);
     }
 
     private bool CanMove()
@@ -43,5 +54,21 @@ public class PlayerMovement : MonoBehaviour
             return true;
         else
             return false;
+    }
+
+    private void HandleSprint()
+    {
+        if (Time.time - lastSprint >= sprintDuration)
+        {
+            isSprinting = false;
+        }
+    }
+
+    public void SetSprint(int seconds, int intensity)
+    {
+        lastSprint = Time.time;
+        sprintDuration = seconds;
+        sprintIntensity = intensity;
+        isSprinting = true;
     }
 }
