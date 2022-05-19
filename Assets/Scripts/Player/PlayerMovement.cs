@@ -64,11 +64,16 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void SetSprint(int seconds, int intensity)
+    public void Sprint(int seconds, int intensity)
     {
         lastSprint = Time.time;
         sprintDuration = seconds;
         sprintIntensity = intensity;
         isSprinting = true;
+    }
+
+    public void Jump(int intensity)
+    {
+        rb.AddForce(Vector3.up * (intensity * 1000));
     }
 }

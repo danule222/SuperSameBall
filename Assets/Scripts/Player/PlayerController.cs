@@ -23,6 +23,11 @@ public class PlayerController : MonoBehaviour
 
     public void SetSprint(int seconds, int intensity)
     {
-        movement.SetSprint(seconds, intensity);
+        movement.Sprint(seconds, intensity);
+    }
+
+    public void SetJump(int intensity)
+    {
+        movement.Jump(intensity);
     }
 }
