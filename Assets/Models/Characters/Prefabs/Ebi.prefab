@@ -1573,7 +1573,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointsValue: 1
-  rotationSpeed: 40
+  rotationSpeed: 50
 --- !u!64 &3061489531627395901
 MeshCollider:
   m_ObjectHideFlags: 0
