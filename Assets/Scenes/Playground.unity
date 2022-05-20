@@ -2414,6 +2414,11 @@ PrefabInstance:
       propertyPath: timerMiliseconds
       value: 
       objectReference: {fileID: 329611871}
+    - target: {fileID: 5208623330095282856, guid: 651b34af08c32cd4588137c8769533ba,
+        type: 3}
+      propertyPath: nextScene.m_Handle
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5208623330095282857, guid: 651b34af08c32cd4588137c8769533ba,
         type: 3}
       propertyPath: m_Name
