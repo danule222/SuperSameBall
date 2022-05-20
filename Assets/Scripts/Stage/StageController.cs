@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StageController : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class StageController : MonoBehaviour
 
     private void Start()
     {
+        StartCounter();
         levelName.text = lName;
     }
 
@@ -56,6 +58,6 @@ public class StageController : MonoBehaviour
 
     public void FinishGame()
     {
-
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
