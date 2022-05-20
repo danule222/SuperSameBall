@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private TMPro.TextMeshProUGUI ebis;
     [SerializeField]
+    public TMPro.TextMeshProUGUI ebis;
 
     private int points = 0;
     private PlayerMovement movement;
