@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     public void AddPoints(int points)
     {
         this.points += points;
-        ebis.text = this.points.ToString();
+        ebis.text = "<mspace=0.5em>" + this.points.ToString("0000");
     }
 
     public void SetSprint(int seconds, int intensity)

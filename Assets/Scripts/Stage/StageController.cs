@@ -9,10 +9,18 @@ public class StageController : MonoBehaviour
     public TMPro.TextMeshProUGUI timerSeconds;
     [SerializeField]
     public TMPro.TextMeshProUGUI timerMiliseconds;
+    [SerializeField]
+    public TMPro.TextMeshProUGUI levelName;
     public int seconds;
+    public string lName;
 
     private float counterStarTime;
     private float remainingTime;
+
+    private void Start()
+    {
+        levelName.text = lName;
+    }
 
     private void Update()
     {
