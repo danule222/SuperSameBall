@@ -12,9 +12,13 @@ public class StageController : MonoBehaviour
     public TMPro.TextMeshProUGUI timerMiliseconds;
     [SerializeField]
     public TMPro.TextMeshProUGUI levelName;
+    public GameObject player;
+    public Scene nextScene;
     public int seconds;
     public string lName;
+    public int numberOfEbis;
 
+    private PlayerController pC;
     private float counterStarTime;
     private float remainingTime;
 
@@ -22,11 +26,14 @@ public class StageController : MonoBehaviour
     {
         StartCounter();
         levelName.text = lName;
+        pC = player.gameObject.GetComponent<PlayerController>();
     }
 
     private void Update()
     {
         HandleCounter();
+        HandleInput();
+        CheckEbis();
     }
 
     private void HandleCounter()
@@ -51,9 +58,38 @@ public class StageController : MonoBehaviour
         }
     }
 
+    private void HandleInput()
+    {
+        if (Input.GetButton("Cancel"))
+        {
+            ReturnToMenu();
+        }
+    }
+
+    private void CheckEbis()
+    {
+        if (pC.GetPoints() >= numberOfEbis)
+        {
+            CompleteStage();
+        }
+    }
+
     public void StartCounter()
     {
         counterStarTime = Time.time;
+    }
+
+    public void CompleteStage()
+    {
+        if (!String.IsNullOrEmpty(nextScene.name))
+            SceneManager.LoadScene(nextScene.name);
+        else
+            ReturnToMenu();
+    }
+
+    public void ReturnToMenu()
+    {
+        SceneManager.LoadScene("Main menu");
     }
 
     public void FinishGame()

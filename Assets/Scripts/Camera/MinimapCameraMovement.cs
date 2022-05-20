@@ -8,8 +8,6 @@ public class MinimapCameraMovement : MonoBehaviour
     public GameObject mainCamera;
     public float cameraHeight;
 
-    public float bruh;
-
     private PlayerController pC;
     private CameraController cC;
 

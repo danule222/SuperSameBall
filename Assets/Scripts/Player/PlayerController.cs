@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
         movement = gameObject.GetComponent<PlayerMovement>();
     }
 
+    public int GetPoints() => points;
+
     public void AddPoints(int points)
     {
         this.points += points;
