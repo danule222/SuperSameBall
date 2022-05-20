@@ -2863,6 +2863,16 @@ PrefabInstance:
       propertyPath: ebis
       value: 
       objectReference: {fileID: 52017795}
+    - target: {fileID: 6179580688827530013, guid: df6fd6738a95d9344b8fea50a4b251f1,
+        type: 3}
+      propertyPath: totalEbis
+      value: 
+      objectReference: {fileID: 8189269144874940580}
+    - target: {fileID: 6179580688827530013, guid: df6fd6738a95d9344b8fea50a4b251f1,
+        type: 3}
+      propertyPath: stageController
+      value: 
+      objectReference: {fileID: 116910240}
     - target: {fileID: 6179580688827530014, guid: df6fd6738a95d9344b8fea50a4b251f1,
         type: 3}
       propertyPath: m_RootOrder
@@ -3124,3 +3134,15 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8189269144874940578}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8189269144874940580 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5958607223102200129, guid: 638805916e6e68048a16a1ce10f1a183,
+    type: 3}
+  m_PrefabInstance: {fileID: 8189269144874940578}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

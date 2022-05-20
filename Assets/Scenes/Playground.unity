@@ -1384,6 +1384,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &915749620 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5958607223102200129, guid: 638805916e6e68048a16a1ce10f1a183,
+    type: 3}
+  m_PrefabInstance: {fileID: 8189269144874940578}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &962064851
 GameObject:
   m_ObjectHideFlags: 0
@@ -2728,6 +2740,16 @@ PrefabInstance:
       propertyPath: ebis
       value: 
       objectReference: {fileID: 52017795}
+    - target: {fileID: 6179580688827530013, guid: df6fd6738a95d9344b8fea50a4b251f1,
+        type: 3}
+      propertyPath: totalEbis
+      value: 
+      objectReference: {fileID: 915749620}
+    - target: {fileID: 6179580688827530013, guid: df6fd6738a95d9344b8fea50a4b251f1,
+        type: 3}
+      propertyPath: stageController
+      value: 
+      objectReference: {fileID: 116910240}
     - target: {fileID: 6179580688827530014, guid: df6fd6738a95d9344b8fea50a4b251f1,
         type: 3}
       propertyPath: m_RootOrder
@@ -2955,6 +2977,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8189269145153448688, guid: 638805916e6e68048a16a1ce10f1a183,
+        type: 3}
+      propertyPath: m_Name
+      value: Level name
+      objectReference: {fileID: 0}
+    - target: {fileID: 8189269145820629028, guid: 638805916e6e68048a16a1ce10f1a183,
+        type: 3}
+      propertyPath: m_Name
+      value: Current ebis
+      objectReference: {fileID: 0}
     - target: {fileID: 8189269146279985384, guid: 638805916e6e68048a16a1ce10f1a183,
         type: 3}
       propertyPath: m_Name

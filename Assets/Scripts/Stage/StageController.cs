@@ -24,6 +24,7 @@ public class StageController : MonoBehaviour
     private float counterStarTime;
     private float remainingTime;
     private bool gamePaused = false;
+    private bool stageCompleted = false;
 
     private void Start()
     {
@@ -95,11 +96,15 @@ public class StageController : MonoBehaviour
 
     public void CompleteStage()
     {
+        stageCompleted = true;
+
         if (!String.IsNullOrEmpty(nextSceneName))
             SceneManager.LoadScene(nextSceneName);
         else
             ReturnToMenu();
     }
+
+    public bool IsStageCompleted() => stageCompleted;
 
     public void ReturnToMenu()
     {
