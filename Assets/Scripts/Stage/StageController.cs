@@ -13,7 +13,7 @@ public class StageController : MonoBehaviour
     [SerializeField]
     public TMPro.TextMeshProUGUI levelName;
     public GameObject player;
-    public Scene nextScene;
+    public string nextSceneName;
     public int seconds;
     public string lName;
     public int numberOfEbis;
@@ -81,8 +81,8 @@ public class StageController : MonoBehaviour
 
     public void CompleteStage()
     {
-        if (!String.IsNullOrEmpty(nextScene.name))
-            SceneManager.LoadScene(nextScene.name);
+        if (!String.IsNullOrEmpty(nextSceneName))
+            SceneManager.LoadScene(nextSceneName);
         else
             ReturnToMenu();
     }

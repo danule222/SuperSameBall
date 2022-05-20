@@ -2411,6 +2411,11 @@ PrefabInstance:
       objectReference: {fileID: 1981642264}
     - target: {fileID: 5208623330095282856, guid: 651b34af08c32cd4588137c8769533ba,
         type: 3}
+      propertyPath: nextSceneName
+      value: Level 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5208623330095282856, guid: 651b34af08c32cd4588137c8769533ba,
+        type: 3}
       propertyPath: timerMiliseconds
       value: 
       objectReference: {fileID: 329611871}
