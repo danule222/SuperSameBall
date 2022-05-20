@@ -13,6 +13,8 @@ public class StageController : MonoBehaviour
     [SerializeField]
     public TMPro.TextMeshProUGUI levelName;
     public GameObject player;
+    public GameObject pauseMenu;
+    public GameObject hud;
     public string nextSceneName;
     public int seconds;
     public string lName;
@@ -21,9 +23,12 @@ public class StageController : MonoBehaviour
     private PlayerController pC;
     private float counterStarTime;
     private float remainingTime;
+    private bool gamePaused = false;
 
     private void Start()
     {
+        Time.timeScale = 1;
+
         StartCounter();
         levelName.text = lName;
         pC = player.gameObject.GetComponent<PlayerController>();
@@ -31,7 +36,8 @@ public class StageController : MonoBehaviour
 
     private void Update()
     {
-        HandleCounter();
+        if (!gamePaused)
+            HandleCounter();
         HandleInput();
         CheckEbis();
     }
@@ -62,8 +68,16 @@ public class StageController : MonoBehaviour
     {
         if (Input.GetButton("Cancel"))
         {
-            ReturnToMenu();
+            ShowPauseMenu();
         }
+    }
+
+    private void ShowPauseMenu()
+    {
+        hud.SetActive(false);
+        pauseMenu.SetActive(true);
+        gamePaused = true;
+        Time.timeScale = 0;
     }
 
     private void CheckEbis()
@@ -95,5 +109,13 @@ public class StageController : MonoBehaviour
     public void FinishGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void ResumeGame()
+    {
+        hud.SetActive(true);
+        pauseMenu.SetActive(false);
+        gamePaused = false;
+        Time.timeScale = 1;
     }
 }
