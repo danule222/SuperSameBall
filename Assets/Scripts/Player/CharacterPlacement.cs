@@ -29,6 +29,4 @@ public class CharacterPlacement : MonoBehaviour
 
         gameObject.transform.rotation = Quaternion.AngleAxis(rotationAngle, Vector3.up);
     }
-
-
 }

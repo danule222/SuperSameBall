@@ -32,8 +32,8 @@ public class PlayerMovement : MonoBehaviour
     private void SetForce()
     {
         axis = Math.Abs(Input.GetAxis("Vertical")) >= Math.Abs(Input.GetAxis("Horizontal"))
-               ? Input.GetAxis("Vertical")
-               : Math.Abs(Input.GetAxis("Horizontal") * .75f);
+                   ? Input.GetAxis("Vertical")
+                   : Math.Abs(Input.GetAxis("Horizontal") * .75f);
 
         Vector3 forwardCamera = mainCamera.transform.forward;
         forwardCamera.y = 0.0f;

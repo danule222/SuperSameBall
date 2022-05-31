@@ -7,7 +7,6 @@ public class EbiController : MonoBehaviour
     public int pointsValue;
     public float rotationSpeed;
 
-
     private void FixedUpdate()
     {
         Rotate();

@@ -23,6 +23,11 @@ public class PlayerController : MonoBehaviour
         sC = stageController.GetComponent<StageController>();
     }
 
+    private void Update()
+    {
+        CheckIfBROActivated();
+    }
+
     void OnEnable()
     {
         if (SceneManager.GetActiveScene().name.Equals("Playground"))
@@ -40,6 +45,14 @@ public class PlayerController : MonoBehaviour
         if (sC.IsStageCompleted())
         {
             PlayerPrefs.SetInt("totalEbis", totalPoints);
+        }
+    }
+
+    private void CheckIfBROActivated()
+    {
+        if (sC.IsBROActive())
+        {
+            sC.CompleteStage();
         }
     }
 

@@ -15,12 +15,18 @@ public class StageController : MonoBehaviour
     public GameObject player;
     public GameObject pauseMenu;
     public GameObject hud;
+    public GameObject mainCamera;
     public string nextSceneName;
     public int seconds;
     public string lName;
     public int numberOfEbis;
 
+    public bool bPressed = false;
+    public bool rPressed = false;
+    public bool broActive = false;
+
     private PlayerController pC;
+    private CameraMovement cM;
     private float counterStarTime;
     private float remainingTime;
     private bool gamePaused = false;
@@ -33,6 +39,7 @@ public class StageController : MonoBehaviour
         StartCounter();
         levelName.text = lName;
         pC = player.gameObject.GetComponent<PlayerController>();
+        cM = mainCamera.gameObject.GetComponent<CameraMovement>();
     }
 
     private void Update()
@@ -41,6 +48,7 @@ public class StageController : MonoBehaviour
             HandleCounter();
         HandleInput();
         CheckEbis();
+        CheckBRO();
     }
 
     private void HandleCounter()
@@ -73,6 +81,33 @@ public class StageController : MonoBehaviour
         }
     }
 
+    private void ActiveBRO()
+    {
+        broActive = true;
+    }
+
+    private void CheckBRO()
+    {
+        if (Input.GetKey(KeyCode.B))
+        {
+            bPressed = true;
+            rPressed = false;
+        } 
+        else if (bPressed && Input.GetKey(KeyCode.R))
+        {
+            rPressed = true;
+        } 
+        else if (rPressed && bPressed && Input.GetKey(KeyCode.O))
+        {
+            ActiveBRO();
+        }
+        else if (Input.anyKeyDown)
+        {
+            bPressed = false;
+            rPressed = false;
+        }
+    }
+
     private void ShowPauseMenu()
     {
         hud.SetActive(false);
@@ -88,6 +123,8 @@ public class StageController : MonoBehaviour
             CompleteStage();
         }
     }
+
+    public bool IsBROActive() => broActive;
 
     public void StartCounter()
     {

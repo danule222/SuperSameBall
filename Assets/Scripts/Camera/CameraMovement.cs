@@ -16,8 +16,6 @@ public class CameraMovement : MonoBehaviour
     private float tiltZAngle = 0;
     private float tiltY = 0;
 
-    public float bruh;
-
     private float yVelocity = 0.0f;
 
     private void Start()
