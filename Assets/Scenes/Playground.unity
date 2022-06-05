@@ -3314,6 +3314,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Current ebis
       objectReference: {fileID: 0}
+    - target: {fileID: 8189269146146789440, guid: 638805916e6e68048a16a1ce10f1a183,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8189269146146789440, guid: 638805916e6e68048a16a1ce10f1a183,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8189269146146789440, guid: 638805916e6e68048a16a1ce10f1a183,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -66.2
+      objectReference: {fileID: 0}
     - target: {fileID: 8189269146279985384, guid: 638805916e6e68048a16a1ce10f1a183,
         type: 3}
       propertyPath: m_Name

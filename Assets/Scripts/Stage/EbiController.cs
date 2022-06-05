@@ -17,11 +17,6 @@ public class EbiController : MonoBehaviour
         transform.Rotate(.0f, Utils.NormalizeAngle(rotationSpeed * Time.deltaTime), .0f);
     }
 
-    public int GetPointsValue()
-    {
-        return pointsValue;
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))

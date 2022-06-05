@@ -673,6 +673,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 916174a192cfb8948a3e4a2513dd90ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicList: 000000009d0100002c030000c20400005e060000f3070000a80900005a0b0000fe0c0000d20e0000
+  destroysOtherBGM: 0
 --- !u!1 &1579898360
 GameObject:
   m_ObjectHideFlags: 0
